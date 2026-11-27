@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+
+    // 🔹 baseMenus（共通メニュー：全員閲覧OK）
+    match /baseMenus/{menuId} {
+      allow read: if true; // 誰でも読める
+      allow write: if false;
+    }
+
+    // 🔹 ingredientsMaster（共通材料マスタ：全員閲覧OK）
+    match /ingredientsMaster/{docId} {
+      allow read: if true; // 誰でも読める
+      allow write: if false;
+    }
+
+    // 🔹 users 以下（自分のみアクセス可）
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+      match /{subcollection=**}/{docId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+
+    // 🔹 作れるメニュー（自分のみ書き込み可、認証済みユーザーのみ閲覧可）
+    match /availableMenus/{hostId}/menus/{menuId} {
+
+      // 読み取り: 誰でも可能（ログイン済みユーザー限定なら request.auth != null）
+      allow read: if request.auth != null;
+  
+      // 書き込み: ホスト本人のみ
+      allow write: if request.auth != null && request.auth.uid == hostId;
+    }
+
+
+     // weeklyPlans
+    match /weeklyPlans/{hostId}/week/{weekId}/menus/{menuId} {
+      // 献立の読み取りは全員可能
+      allow read: if true;
+
+      // 献立の書き込みはホスト本人のみ
+      allow write: if request.auth != null
+               && request.auth.uid == hostId;
+      }
+
+    match /weeklyPlans/{hostId}/week/{weekId}/votes/{voteId} {
+      // 投票情報の読み取りは全員可能
+      allow read: if true;
+
+      // 投票情報の新規追加は認証済みユーザーのみ
+      allow create: if request.auth != null;
+
+      // 投票情報の変更・削除は禁止
+      allow update, delete: if false;
+    }
+
+    // 🔹 guestVotes
+    match /guestVotes/{gestId}/{sub=**} {
+       allow read: if true;  // 誰でも読める
+      
+       allow write: if request.auth != null; // 書き込みは認証ユーザーだけ
+    }
+
+    // 🔹 invites
+    match /invites/{inviteId} {
+      allow read: if false;
+      allow create, update, delete: if false; // クライアントは直接操作不可
+    }
+  }
+}

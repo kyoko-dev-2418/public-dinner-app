@@ -1,0 +1,6 @@
+.Invite{
+  padding-top: var(--space-xl);
+}
+.Invite .CreateStep_inner h3{
+  font-size: var( --font-lg);
+} 

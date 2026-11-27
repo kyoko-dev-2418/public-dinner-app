@@ -1,0 +1,22 @@
+.Guest_this_Week_Menu .This_Week_Menu_title {
+  display: block;           /* flex をやめる */
+  width: 100%;
+}
+
+.Guest_this_Week_Menu .menu-name {
+  display: inline-block;    
+  max-width: 100%;          /* 親幅に収まる */
+  word-break: break-word;    /* 長い単語でも折り返す */
+  white-space: normal;       /* nowrap を解除 */
+  text-align: left;
+}
+
+.Guest_this_Week_Menu .This_Week_Menu{
+  margin-bottom: var(--space-md);
+  display: inline-block; 
+  width: 100%;          
+  text-align: left;    
+}
+.Guest_this_Week_Menu button{
+  width: 80%;
+}

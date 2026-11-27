@@ -1,0 +1,197 @@
+.Step_inner{
+  margin: var(--space-md) 0;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+.Step_inner h3{
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-sm);
+}
+.Step_inner h4{
+  font-size: var(--font-md);
+  margin-bottom: var(--space-sm);
+}
+.Step_inner button{
+  font-size: var(--font-md);
+  font-weight: bold;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  transition: all 0.5s;
+}
+
+.GuestStepbutton{
+  border: 3px solid var(--color-accent);
+  background: var(--color-accent);
+  width: 100%;
+}
+.GuestStepbutton:hover{
+  background:rgba(255,181,52,0.6);
+}
+.Step_inner input{
+  padding: var(--space-xs);
+  border-radius:var(--radius-sm);;
+  border: 1px solid var(--color-text);
+}
+
+.Step_inner select{
+  width: 100%;
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-text);
+}
+
+.GuestStep_tex1{
+  font-size:  var(--font-sm);
+  width: 80%;
+  text-align: left;
+  margin: 0 auto var(--space-lg);
+}
+.GuestStep_stepimg{
+  margin-bottom: var(--space-sm);
+}
+
+
+/* GuestStep1 */
+.GuestStep1_button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+}
+.GuestStep1_button:not(:last-of-type){
+  margin-bottom: var(--space-sm);
+}
+.GuestStep1_button_box{
+  display: flex;
+  align-items: center;
+}
+.GuestStep1_button_ingredientimg{
+  width: 120px;
+  margin-right: var(--space-sm);
+}
+
+.gueststep1_message{
+  font-size: var(--font-md);
+  font-weight: bold;
+  margin-bottom: var(--space-md);
+}
+
+/* GuestStep2 */
+.Gueststep2_button{
+  width: 100%;
+  transition: all 0.5s;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-md);
+  font-weight: bold;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  transition: all 0.5s;
+}
+.Gueststep2_button:last-of-type{
+  margin-bottom: 3.5rem;
+}
+.Gueststep2_button_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Gueststep2_button_box img{
+  width: 1.5rem; 
+  transition: all 0.5s;
+}
+.Gueststep2_button_hide{
+  max-height: 0; /* max-heightを0にする、レスポンシブ対応 */
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.Gueststep2_button.open .Gueststep2_button_box img{
+  transform: rotate(180deg);
+
+}
+.Gueststep2_button.open .Gueststep2_button_hide{
+ margin: var(--space-xs) auto 0;
+  padding-top: var(--space-xs);
+    max-height: none;
+    overflow: hidden;
+}
+.GuestStep2button1{
+  margin-top: var(--space-xs);
+}
+.Gueststep2button2{
+  display: block;
+  text-align: left;
+  font-size: var(--font-sm);
+  font-weight: bold;
+}
+
+
+/* GuestStep3 */
+.GuestStep3 ul li{
+margin-bottom: var(--space-xs);
+padding-bottom: var(--space-xs);
+border-bottom: 1px solid var(--color-border);
+text-align: left;
+}
+.GuestStep3 ul li h4{
+  font-size: var(--font-lg);
+  margin-bottom: 0;
+}
+.GuestStep3 ul li h4 span{
+  font-size: var(--font-md);
+  font-weight: normal;
+}
+.GuestStep3 ul li p{
+  color: var(--color-brand);
+}
+.Gueststep3_box1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: var(--space-xs);
+}
+.Gueststep3_box1 button{
+  border: 3px solid #9B9B9B;
+  background: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.Gueststep3_box1 button:hover{
+  background: rgba(155,155,155,0.2);
+}
+.Gueststep3_box1 button img{
+  width: 25px;
+}
+.Gueststep3_box2{
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-top: var(--space-lg);
+}
+.GuestStepbutton2{
+   background: var(--color-brand);
+  border: 3px solid var(--color-brand);
+  color: var(--color-bg);
+  width: 100%;
+}
+
+.GuestStepbutton2:hover{
+  background: #E1FFD7;
+  color: var(--color-text);
+}
+
+
+/* Guest_thanks */
+
+.guestthanks_img2{
+  margin: var(--space-md) ;
+}
+.Guest_thanks_box{
+  padding: var(--space-sm) 0;
+  border-top: 1px solid var(--color-border);
+}

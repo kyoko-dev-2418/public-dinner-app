@@ -1,0 +1,45 @@
+/* ====== グローバル共通スタイル ====== */
+
+:root {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* ====== ミニマムリセット ====== */
+
+/* 全要素の余白をリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 画像や動画がはみ出さないように */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* リンクの下線や色をコントロールしやすく */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;        /* 枠線を消す */
+  background: none;    /* 背景を消す */
+  padding: 0;          /* 余白リセット */
+  cursor: pointer;     /* マウスカーソルを指マークに */
+}
+
